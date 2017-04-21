@@ -1,0 +1,41 @@
+<div class="container">
+	<h1>Welcome to Bright Ideas!</h1>
+	<p class='success'><%= notice %></p>
+	<% if signed_in? %>
+		<p class='success'>Welcome, <%= current_user.first_name %>!</p>
+		<p><%= link_to 'Logout', session_path(current_user), method: :delete, class: 'btn btn-primary' %></p>
+	<% end %>
+	<!-- <table>
+		<thead>
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Email Address</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @users.each do |user| %>
+				<tr>
+					<td><%= user.first_name %></td>
+					<td><%= user.last_name %></td>
+					<td><%= user.email %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table> -->
+
+	<% if !signed_in? %>
+
+	<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h1 class="panel-title">Please register/sign in to proceed</h1>
+    </div>
+    <div class="panel-body"><%= link_to 'Register', new_user_path, class: 'btn btn-primary' %></div><hr>
+		<div class="panel-body"><%= link_to 'Login', new_session_path, class: 'btn btn-primary' %></div><hr>
+</div>
+
+	<% end %>
+
+	<div class='col-md-6'><%= link_to 'Bright Ideas', posts_path, class: 'btn btn-success' %></div>
+
+</div>
