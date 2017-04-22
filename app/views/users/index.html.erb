@@ -5,25 +5,7 @@
 		<p class='success'>Welcome, <%= current_user.first_name %>!</p>
 		<p><%= link_to 'Logout', session_path(current_user), method: :delete, class: 'btn btn-primary' %></p>
 	<% end %>
-	<!-- <table>
-		<thead>
-			<tr>
-				<th>First Name</th>
-				<th>Last Name</th>
-				<th>Email Address</th>
-			</tr>
-		</thead>
-		<tbody>
-			<% @users.each do |user| %>
-				<tr>
-					<td><%= user.first_name %></td>
-					<td><%= user.last_name %></td>
-					<td><%= user.email %></td>
-				</tr>
-			<% end %>
-		</tbody>
-	</table> -->
-
+	
 	<% if !signed_in? %>
 
 	<div class="panel panel-primary">

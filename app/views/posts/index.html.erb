@@ -24,7 +24,7 @@
 	<p class='notice'><%= notice %></p>
 	<% @posts.each do |post| %>
 		<div class="row">
-			<div class="col-md-2 bold"> <a href="#"><%= post.user.first_name %></a>  says:</div>
+			<div class="col-md-2 bold"> <a href="#"><a href="/users/<%= post.user.id %>"><%= post.user.first_name %></a> says:</div>
 			<div class="col-md-6"><%= post.content %></div>
 		</div>
 		<div class="row">

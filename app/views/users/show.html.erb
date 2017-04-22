@@ -1,13 +1,13 @@
 <div class="container">
 
+	<div class="row">
+
 	<div class='col-md-6'><%= link_to 'Bright Ideas', posts_path, class: 'btn btn-success' %></div>
 	<% if signed_in? %>
 		<p><%= link_to 'Logout', session_path(current_user), method: :delete, class: 'btn btn-primary' %></p>
 	<% end %>
 
 	<hr>
-
-	<div class="row">
 
 	  <table class="table table-striped">
 		<thead>
@@ -18,13 +18,13 @@
 			</tr>
 		</thead>
 		<tbody>
-			<% @users.each do |user| %>
+
 				<tr>
-					<td><%= user.first_name %></td>
-					<td><%= user.last_name %></td>
-					<td><%= user.email %></td>
+					<td> John </td>
+					<td> Smith </td>
+					<td> test@example.com </td>
 				</tr>
-			<% end %>
+
 		</tbody>
 	</table>
 
@@ -43,7 +43,7 @@
 	<% end %>
 
   <hr>
-	
+
 	<p>Total Number of Posts: 1</p>
 	<p>Total Number of Likes: 2</p>
 
